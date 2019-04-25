@@ -3,14 +3,12 @@ import time
 
 class Card(object):
     """represents a credit card
-        attributes: account number, ballance"""
+        attributes: account number, ballance, pin, """
 
-    def __init__(self, name='', ballance = 0):
-        self.name = name
+    def __init__(self, accnumber = 0, ballance = 0, pin = '0000'):
+        self.accnumber = accnumber
         self.ballance = ballance
-
-    '''def __str__(self):
-        return '''
+        self.pin = pin 
 
     def withdraw(self, other):
         if self.ballance<other:
@@ -33,7 +31,6 @@ class Card(object):
             if choice == '1':
                 other=int(raw_input('Please select the amount for withdrawal: '))
                 card.withdraw(other)
-                #card.lista_tr.append(['Retragere:', other])
 
             if choice == '2':
                 other=int(raw_input('Please select the amount for deposit: '))
@@ -47,10 +44,6 @@ class Card(object):
 
             if choice == '0':
                 break
-            
-                
-                          
-
 
 
 def menu():
@@ -67,9 +60,9 @@ clients = {1: {'pin': '0000', 'ballance': 0, 'account_number' : '1'}}
 dictlen = len(clients)
 
 print "Insert your credit card"
-#time.sleep(3)
+time.sleep(3)
 print "Please wait"
-#time.sleep(3)
+time.sleep(3)
 accnumber = raw_input("We are sorry. The ATM has a malfunction. Please introduce your account number: ")
 
 
@@ -89,7 +82,7 @@ for key in clients:
         break
     
 
-print clients
+
 
 
 
